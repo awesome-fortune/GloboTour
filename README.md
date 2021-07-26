@@ -16,6 +16,7 @@
 - Material AppBarLayout
 - MaterialToolbar
 - Snackbar with action
+- CardView
 
 ## Application screenshots
 
