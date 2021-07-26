@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import za.co.masekofortune.globotour.R
 import za.co.masekofortune.globotour.city.City
 import za.co.masekofortune.globotour.city.VacationSpots
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class FavoriteFragment : Fragment() {
@@ -18,7 +21,11 @@ class FavoriteFragment : Fragment() {
     private lateinit var textView: TextView
     private lateinit var favoriteCityList: ArrayList<City>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         val view = inflater.inflate(R.layout.fragment_favorite, container, false)
 
@@ -52,5 +59,34 @@ class FavoriteFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = RecyclerView.VERTICAL
         recyclerView.layoutManager = layoutManager
+
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
+
+    private val itemTouchHelper = ItemTouchHelper(object :
+        ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+            ItemTouchHelper.RIGHT
+        ) {
+
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            targetViewHolder: RecyclerView.ViewHolder
+        ): Boolean {
+            val fromPosition = viewHolder.adapterPosition
+            val toPosition = targetViewHolder.adapterPosition
+
+            Collections.swap(favoriteCityList, fromPosition, toPosition)
+
+            recyclerView.adapter?.notifyItemMoved(fromPosition, toPosition)
+
+            return true
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            TODO("Not yet implemented")
+        }
+
+    })
 }
