@@ -13,24 +13,9 @@
 
 ## Application screenshots
 
-### City list screen
-This is the main screen of the application where the user can see a list of top cities around the world.
-The user can also delete the cities from the list as well as add cities to their favorite list by tapping on the heart icon.
-
-![City list screen](https://github.com/awesome-fortune/GloboTour/blob/master/screenshots/main_screen.png "City list screen")
-
-### Navigation drawer
-The application's navigation drawer which lets the user navigate between the cities and favories screen
-
-![Navigation drawer](https://github.com/awesome-fortune/GloboTour/blob/master/screenshots/nav_drawer_on_main_screen.png "Navigation drawer")
-
-### Empty favorites screen
-The favorites screen if the user has not added any cities to their favorite city list
-
-
-![Empty favorites screen](https://github.com/awesome-fortune/GloboTour/blob/master/screenshots/empty_favorites.png "Empty favorites screen")
-
-### Favorite screen with data
-The favorites screen containing a list of the user's favorite cities
-
-![Favorites screen with data](https://github.com/awesome-fortune/GloboTour/blob/master/screenshots/favorites_screen.png "Favorites screen with data")
+|Example|Description|Preview|
+|-------|-------|-----------|
+| City list screen | Displays a list of cities to the user. | <img src ="screenshots/main_screen.png" width=214 height=400> |
+| Navigation drawer| Allows the user to navigate between the two screens in the application. | <img src ="screenshots/nav_drawer_on_main_screen.png" width=214 height=400> |
+| Empty favorites screen | Displays a text view if the user has not added any cities to the favorite city list. | <img src ="screenshots/empty_favorites.png" width=214 height=400> |
+| Favorite screen with data | Displays a list of cities that the user has selected as favorites | <img src ="screenshots/favorites_screen.png" width=214 height=400> |
